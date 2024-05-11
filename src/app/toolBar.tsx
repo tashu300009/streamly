@@ -34,7 +34,7 @@ const TopBar = () => {
       >
         <Typography variant="h6">
           <a href="/">
-            <Image src="/stream.png" width={44} height={40} alt="" />
+            <Image src="/streamly/stream.png" width={44} height={40} alt="" />
           </a>
         </Typography>
 
@@ -52,7 +52,7 @@ const TopBar = () => {
                     src={
                       b.backdrop_path
                         ? `${TMDB_CONFIG.images.secure_base_url}/w45${b.backdrop_path}`
-                        : "/default.png"
+                        : "/streamly/default.png"
                     }
                     alt=""
                     width={32}

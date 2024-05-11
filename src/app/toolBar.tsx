@@ -80,7 +80,7 @@ const TopBar = () => {
           onInputChange={search}
           onChange={(_res: any, value: any) => {
             console.log(value);
-            router.push(`/item/${value.id}?media=${value.media_type}`);
+            router.push(`/item?media=${value.media_type}&id=${value.id}`);
           }}
           noOptionsText="No Content found"
           options={options}

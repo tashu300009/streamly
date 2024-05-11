@@ -14,23 +14,23 @@ type Item = {
   release_date?: String;
   vote_average?: number;
   title?: String;
-  overview?: String,
+  overview?: String;
 };
 
-export default function Page({ params }: { params: { slug: String } }) {
+export default function Page() {
   const searchParams = useSearchParams();
   const [item, setItem] = useState<Item>({});
 
   useEffect(() => {
-    if (params.slug) {
-      findMovieById({ id: params.slug }).then((res) => {
+    const id = searchParams.get("id");
+    if (id) {
+      findMovieById({ id }).then((res) => {
         if (res) {
           setItem(res);
         }
       });
     }
-  }, [params.slug, searchParams, findMovieById]);
-  console.log(item);
+  }, [searchParams, findMovieById]);
 
   if (!item.id) return <Loading />;
 
